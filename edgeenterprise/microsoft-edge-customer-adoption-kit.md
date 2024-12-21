@@ -1,13 +1,13 @@
 ---
 title: "Microsoft Edge customer adoption materials"
-ms.author: collw
+ms.author: archandr
 author: dan-wesley
-manager: seanlynd
-ms.date: 03/01/2021
+manager: likuba
+ms.date: 07/18/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Microsoft Edge customer adoption materials"
 ---
@@ -21,17 +21,28 @@ Check back for more materials as they're made available.
 ## Customer adoption kit
 
 The customer adoption kit contains the following material:
-
-- IT Deployment Guide
-- How to Get Started User Guide
-- Adoption Email Templates
-- Banners
-- Digital Signage
-- One-Pagers
-- Demo Video and GIFs
-- Web Resource Links
+- Internet Explorer Retirement Kit **(Available in English, German, Spanish, French, Japanese, Korean, Chinese (Simplified))**
+    - Adoption emails
+    - Flyers
+    - Infographic
+    - Site Collection Form
+- General Adoption Kit
+    - IT Deployment Guide
+    - How to Get Started User Guide
+    - Adoption Email Templates
+    - Banners
+    - Digital Signage
+    - One-Pagers
+    - Demo Video and GIFs
+    - Web Resource Links
 
 The adoption kit is available in English and several other languages, including French, German, and Japanese. Select your preferred language at the [Microsoft Edge Customer Adoption Kit download center](https://www.microsoft.com/download/details.aspx?id=102119).
+
+### Internet Explorer (IE) Retirement Resources
+
+Find valuable resources and expert guidance to help your organization safely and quickly move from IE to Microsoft Edge.
+
+:::image type="content" source="media/customer-adoption-not-md/Internet Explorer Retirement Screenshot.png" alt-text="Internet Explorer Retirement":::
 
 ### IT Deployment Guide
 
@@ -47,7 +58,7 @@ Use this guide to educate users about Microsoft Edge. The guide includes overvie
 
 ### Adoption Email Templates
 
-Use email to achieve a smooth transition as you rollout Microsoft Edge to end users. We’ve packaged a set of emails for you to use as an internal campaign. They provide tips and articulate how Microsoft Edge can save time and simplify their workday. The following screenshot shows an example of these templates.
+Use email to achieve a smooth transition as you rollout Microsoft Edge to end users. We've packaged a set of emails for you to use as an internal campaign. They provide tips and articulate how Microsoft Edge can save time and simplify their workday. The following screenshot shows an example of these templates.
 
 :::image type="content" source="media/customer-adoption-not-md/ms-edge-3-email-template.png" alt-text="Adoption email templates":::
 
@@ -80,4 +91,5 @@ If you're interested in learning more about the benefits of Microsoft Edge, [vis
 
 ## See also
 
+- [Microsoft Edge setup guide](https://assistants.microsoft.com/microsoftedgesetupguide)
 - [Microsoft Edge Enterprise landing page](https://aka.ms/EdgeEnterprise)

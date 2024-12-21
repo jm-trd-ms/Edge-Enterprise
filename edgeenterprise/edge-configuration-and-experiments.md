@@ -2,12 +2,12 @@
 title: "Microsoft Edge configurations and experimentation"
 ms.author: kvice
 author: dan-wesley
-manager: srugh
-ms.date: 02/20/2020
+manager: laurawi
+ms.date: 07/18/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Microsoft Edge configurations and experimentation"
 ---
@@ -28,7 +28,7 @@ Configurations are the payload meant to ensure product health, security, and pri
 
 ## Controlled Feature Rollout
 
-Controlled Feature Rollout (CFR) is a procedure for slowly increasing the size of the user group that receives a feature. By distributing a new feature to a randomly selected subset of the user population, it’s possible to compare user feedback to an equally sized control group without the feature to measure the impact of the feature.
+Controlled Feature Rollout (CFR) is a procedure for slowly increasing the size of the user group that receives a feature. By distributing a new feature to a randomly selected subset of the user population, it's possible to compare user feedback to an equally sized control group without the feature to measure the impact of the feature.
 
 ## Experiments
 
@@ -45,7 +45,7 @@ Microsoft Edge's interaction with this service is controlled by settings in the 
 - Disable communication with the service
 
   > [!CAUTION]
-  > If you disable communications with the service, this will affect Microsoft’s ability to respond to a severe bug in a timely manner.
+  > If you disable communications with the service, this will affect Microsoft's ability to respond to a severe bug in a timely manner.
 
 ## See also
 

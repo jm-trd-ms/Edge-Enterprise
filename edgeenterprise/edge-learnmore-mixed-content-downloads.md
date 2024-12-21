@@ -1,23 +1,20 @@
 ---
-title: "Microsoft Edge and mixed content downloads"
-ms.author: kele
+title: "Learn how Microsoft Edge handles mixed content downloads"
+ms.author: archandr
 author: dan-wesley
 manager: srugh
-ms.date: 04/30/2020
+ms.date: 01/11/2024
 audience: ITPro
-ms.topic: procedural
-ms.prod: microsoft-edge
+ms.topic: conceptual
+ms.service: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: "Microsoft Edge and mixed content downloads"
+description: "Learn about mixed content downloads and how Microsoft Edge handles them."
 ---
 
-# Learn about Microsoft Edge and mixed content downloads
+# Learn how Microsoft Edge handles mixed content downloads
 
-This article explains mixed content downloads and how Microsoft Edge handles them.
-
->[!NOTE]
->This article applies to Microsoft Edge version 85 or later.
+This article defines mixed content downloads and explains how Microsoft Edge handles them.
 
 ## What are mixed content downloads?
 
@@ -26,7 +23,7 @@ A mixed content download happens when you start a download from an HTML page tha
 - One or more of the download location's redirects was loaded over an insecure HTTP connection.
 - The final download location was loaded over an insecure HTTP connection.
 
-Either scenario is a mixed content because the request was made using secure HTTPS and both HTTP and HTTPS content are involved in reaching the final download destination. Modern browsers display warnings about this type of content to indicate to the user that this download may be transferred insecurely even though the original page accessed was secure.
+Either of the preceding scenarios is a mixed content download because the request was made using secure HTTPS and both HTTP and HTTPS connections are used to reach the final destination. Modern browsers display warnings about this type of content to indicate that this download may be transferred insecurely even though the original page was accessed securely.
 
 ## Download warnings and user options
 
@@ -61,7 +58,7 @@ Enterprises that want to exclude mixed content blocking from specific websites c
 > Portions of this page are modifications based on work created and shared by Chromium.org and used according to terms 
   described in the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). The original page can be found [here](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content).
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
 ## See also
 

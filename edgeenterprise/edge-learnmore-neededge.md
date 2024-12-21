@@ -3,21 +3,21 @@ title: "Redirection from Internet Explorer to Microsoft Edge for compatibility w
 ms.author: laannade
 author: dan-wesley
 manager: ratetali
-ms.date: 11/16/2020
+ms.date: 01/11/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Redirection from Internet Explorer to Microsoft Edge for compatibility with modern web sites"
 ---
 
 # Redirection from Internet Explorer to Microsoft Edge for compatibility with modern web sites
 
-> [!NOTE]
-> This article applies to Microsoft Edge Stable version 87 or later.
-
 ## Overview
+
+> [!NOTE]
+> The retired, out-of-support Internet Explorer 11 desktop application has been permanently disabled through a Microsoft Edge update on certain versions of Windows 10. For more information, see [Internet Explorer 11 desktop app retirement FAQ](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549).
 
 Many modern websites have designs that are incompatible with Internet Explorer. Whenever an Internet Explorer user visits an incompatible public site, they get a message that tells them the site is incompatible with their browser, and they need to manually switch to a different browser.
 
@@ -34,8 +34,6 @@ When a user goes to a site that is incompatible with Internet Explorer, they wil
     - Windows 10 version 1709 or later
     - Windows 8.1
     - Windows 7
-
-
 
 ## Redirection experience
 
@@ -55,7 +53,7 @@ The website incompatibility banner:
 - offers to make Microsoft Edge as the default browser
 - gives the user the option to explore Microsoft Edge
 
-When a site is redirected from Internet Explorer to Microsoft Edge, the Internet Explorer tab that started loading the site is closed if it had no prior content. Otherwise, the active tab view goes to a  Microsoft [support](https://support.microsoft.com/office/the-website-you-were-trying-to-reach-doesn-t-work-with-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554?ui=en-US&rs=en-US&ad=US) page that explains why the site was redirected to Microsoft Edge.
+When a site is redirected from Internet Explorer to Microsoft Edge, the Internet Explorer tab that started loading the site is navigated to a Microsoft [support](https://support.microsoft.com/office/the-website-you-were-trying-to-reach-doesn-t-work-with-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554?ui=en-US&rs=en-US&ad=US) page that explains why the site was redirected to Microsoft Edge.
 
 > [!NOTE]
 > After a redirection users can go back to using Internet Explorer for sites that are not on the Internet Explorer incompatibility list.  
@@ -92,7 +90,7 @@ In addition to needing the BHO, there is a dependency on the **RedirectSitesFrom
 >
 >If you're on a domain joined or Mobile Device Management (MDM) enrolled device, you won't see this option.
 >
-> Instead, if you want to let your users load sites in Internet Explorer mode, you can do so by configuring the policy [Allow Internet Explorer mode testing](./microsoft-edge-policies.md#allow-internet-explorer-mode-testing).
+> Instead, if you want to let your users load sites in Internet Explorer mode, you can do so by configuring the policy [Allow Internet Explorer mode testing](./microsoft-edge-policies.md#intranetredirectbehavior).
 
 ### Policy: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
 

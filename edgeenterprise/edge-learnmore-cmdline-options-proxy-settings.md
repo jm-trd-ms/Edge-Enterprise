@@ -3,11 +3,11 @@ title: "Microsoft Edge proxy settings"
 ms.author: brianalt
 author: dan-wesley
 manager: srugh
-ms.date: 05/01/2020
+ms.date: 01/11/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Use command-line options to configure proxy settings "
 ---
@@ -15,9 +15,6 @@ description: "Use command-line options to configure proxy settings "
 # How to use Microsoft Edge command-line options to configure proxy settings
 
 This article describes how you can use command-line options to override the default system network settings.
-
->[!NOTE]
->This article applies to Microsoft Edge version 77 or later.
 
 ## System network settings
 
@@ -73,7 +70,7 @@ Tells Microsoft Edge to use the PAC file at the specified URL. For example, `--p
 > Portions of this page are modifications based on work created and shared by Chromium.org and used according to terms 
   described in the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). The original page can be found [here](https://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
 ## See also
 

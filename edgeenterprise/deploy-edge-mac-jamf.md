@@ -3,11 +3,11 @@ title: "Automate Microsoft Edge for macOS deployment with Jamf"
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 11/30/2019
+ms.date: 07/18/2024
 audience: ITPro
-ms.topic: technical
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.topic: conceptual
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "How to automate Microsoft Edge for macOS deployment with Jamf."
 ---
@@ -15,9 +15,6 @@ description: "How to automate Microsoft Edge for macOS deployment with Jamf."
 # Deploy to macOS with Jamf
 
 This article describes how to deploy Microsoft Edge for macOS using Jamf.
-
-> [!NOTE]
-> This article applies to Microsoft Edge version 77 or later.
 
 ## Prerequisites
 
@@ -86,10 +83,10 @@ Before you deploy Microsoft Edge, make sure you meet the following prerequisites
     > [!NOTE]
     > You can return to a deployment policy at any time to change settings.
 
-Congratulations! You’ve just finished configuring Jamf to deploy Microsoft Edge for macOS. When the trigger condition you defined is true, the package will get deployed to the computers you specified.
+Congratulations! You've just finished configuring Jamf to deploy Microsoft Edge for macOS. When the trigger condition you defined is true, the package will get deployed to the computers you specified.
 
 ## See also
 
 - [Microsoft Edge Enterprise landing page](https://aka.ms/EdgeEnterprise)
 - [Jamf.com](https://www.jamf.com/)
-- [Integrate Jamf with Microsoft Intune](/intune/conditional-access-integrate-jamf)
+- [Integrate Jamf with Microsoft Intune](/mem/intune/protect/conditional-access-integrate-jamf)

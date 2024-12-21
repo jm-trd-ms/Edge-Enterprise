@@ -2,12 +2,12 @@
 title: "Microsoft Edge support for Windows Information Protection"
 ms.author: kvice
 author: dan-wesley
-manager: srugh
-ms.date: 04/24/2020
+manager: likuba
+ms.date: 07/18/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Microsoft Edge support for Windows Information Protection"
 ---
@@ -17,7 +17,7 @@ description: "Microsoft Edge support for Windows Information Protection"
 This article describes how Microsoft Edge supports Windows Information Protection (WIP).
 
 > [!NOTE]
-> This applies to Microsoft Edge version 81 or later.
+> This applies to Microsoft Edge version 81 or later. Windows information protection will be discontinued over time. For more information, see [Announcing the sunset of Windows Information Protection (WIP)](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/announcing-the-sunset-of-windows-information-protection-wip/ba-p/3579282).
 
 ## Overview
 
@@ -64,7 +64,7 @@ Starting with Microsoft Edge version 81, the following features are supported:
 - Silent/Block/Override enforcement for work file uploads to non-work locations.  
 - Silent/Block/Override enforcement for file Drag & Drop actions.
 - Silent/Block/Override enforcement for Clipboard actions.
-- Browsing to work locations from non-work profiles automatically redirects to the Work Profile (associated with the Azure AD Identity.)
+- Browsing to work locations from non-work profiles automatically redirects to the Work Profile (associated with the Microsoft Entra identity.)
 - IE Mode supports full WIP functionality.
 
 ## Working with WIP in Microsoft Edge
@@ -83,18 +83,18 @@ Using WIP with Microsoft Edge requires the presence of a work profile.
 
 ### Ensure the presence of a work profile
 
-On hybrid joined machines, Microsoft Edge is automatically signed in with the Azure Active Directory (Azure AD) account. To make sure that users don't remove this profile, which is needed for WIP, configure the following policy:
+On hybrid joined machines, Microsoft Edge is automatically signed in with the Microsoft Entra account. To make sure that users don't remove this profile, which is needed for WIP, configure the following policy:
 
 - [NonRemovableProfileEnabled](./microsoft-edge-policies.md#nonremovableprofileenabled)
 
 > [!NOTE]
-> If your environment isn't hybrid joined, you can hybrid join using these instructions: [Plan your hybrid Azure Active Directory join implementation](/azure/active-directory/devices/hybrid-azuread-join-plan).
+> If your environment isn't hybrid joined, you can hybrid join using these instructions: [Plan your Microsoft Entra hybrid join implementation](/azure/active-directory/devices/hybrid-azuread-join-plan).
 
-If hybrid joining isn't an option, you can use on-prem Active Directory accounts to allow Microsoft Edge to auto create a special work profile with the users' domain accounts. Note that on-premises accounts may not receive all of Azure AD's features, such as cloud sync, Office NTP, and so on.)
+If hybrid joining isn't an option, you can use on-prem Microsoft Entra accounts to allow Microsoft Edge to auto create a special work profile with the users' domain accounts. Note that on-premises accounts may not receive all of Microsoft Entra features, such as cloud sync, Office NTP, and so on.
 
-#### Active Directory (AD) accounts
+#### Microsoft Entra accounts
 
-For AD accounts, you must configure the following policy to have the Microsoft Edge auto create a special work profile.
+For Microsoft Entra accounts, you must configure the following policy to have the Microsoft Edge auto create a special work profile.
 
 - [ConfigureOnPremisesAccountAutoSignIn](./microsoft-edge-policies.md#configureonpremisesaccountautosignin)
 

@@ -1,10 +1,6 @@
-# last revised 05/03/2021
+# last revised 11/11/2024
 - name: Microsoft Edge Enterprise documentation 
   href: index.yml
-- name: Microsoft Edge documentation
-  href: /microsoft-edge/
-- name: Microsoft Edge content updates
-  href: microsoft-edge-content-updates.md
 # GET STARTED
 - name: Get started with Microsoft Edge
   items:
@@ -14,12 +10,12 @@
      href: https://www.microsoftedgeinsider.com/whats-new
    - name: Customer adoption materials
      href: microsoft-edge-customer-adoption-kit.md
-   - name: Explore documentation resources
-     href: /microsoft-edge/
    - name: Microsoft Edge hands-on deployment lab
      href: deploy-edge-hands-on-lab.md
    - name: Windows Blogs - Microsoft Edge Developer
      href: https://blogs.windows.com/msedgedev/
+   - name: Microsoft Edge FAQ
+     href: microsoft-edge-frequently-asked-questions.md
 # PLAN
 - name: Plan for Microsoft Edge
   items:
@@ -35,26 +31,8 @@
      href: microsoft-edge-browser-usage-report.md
    - name: Ready for Microsoft Edge
      href: deploy-edge-ready-for-edge.md
-   - name: Stable Channel Release Notes
-     href: microsoft-edge-relnote-stable-channel.md
-   - name: Stable Channel archived release notes
-     href: microsoft-edge-relnote-archive-stable-channel.md
-   - name: Beta Channel Release Notes
-     href: microsoft-edge-relnote-beta-channel.md
-   - name: Beta Channel archived release notes
-     href: microsoft-edge-relnote-archive-beta-channel.md
-   - name: Release schedule
-     href: microsoft-edge-release-schedule.md
-   - name: Security updates
-     href: microsoft-edge-relnotes-security.md     
-   - name: Microsoft Edge policy mapping
-     items:
-      - name: Policy mapping overview
-        href: microsoft-edge-policy-map-overview.md
-      - name: Microsoft Edge Legacy to Microsoft Edge policy mapping
-        href: microsoft-edge-policy-map-legacy-to-newedge.md
-      - name: Google Chrome to Microsoft Edge policy mapping
-        href: microsoft-edge-policy-map-chrome-to-newedge.md
+   - name: Install Microsoft Edge for mobile platforms in China
+     href: microsoft-edge-install-mobile-china.md
    - name: Supported Operating Systems
      href: microsoft-edge-supported-operating-systems.md
    - name: Lifecycle Policy
@@ -63,10 +41,31 @@
      href: microsoft-edge-supported-languages.md
    - name: System updates for Microsoft Edge
      items:
-      - name: How to access the old version of Microsoft Edge
-        href: microsoft-edge-sysupdate-access-old-edge.md
       - name: Windows updates to support Microsoft Edge
         href: microsoft-edge-sysupdate-windows-updates.md
+# KNOWN ISSUES
+- name: Schedule, Known issues, Release notes
+  items:
+   - name: Release schedule
+     href: microsoft-edge-release-schedule.md
+   - name: Microsoft Edge known issues
+     href: microsoft-edge-known-issues.md
+   - name: Beta Channel Release Notes
+     href: microsoft-edge-relnote-beta-channel.md
+   - name: Beta Channel archived release notes
+     href: microsoft-edge-relnote-archive-beta-channel.md
+   - name: Stable Channel Release Notes
+     href: microsoft-edge-relnote-stable-channel.md
+   - name: Stable Channel archived release notes
+     href: microsoft-edge-relnote-archive-stable-channel.md
+   - name: Mobile Beta Channel Release Notes
+     href: microsoft-edge-relnote-mobile-beta-channel.md
+   - name: Mobile Stable Channel Release Notes
+     href: microsoft-edge-relnote-mobile-stable-channel.md
+   - name: Mobile Stable Channel archived release notes
+     href: microsoft-edge-relnote-archive-mobile-stable-channel.md
+   - name: Security updates
+     href: microsoft-edge-relnotes-security.md  
 # DEPLOY
 - name: Deploy Microsoft Edge
   items:
@@ -74,25 +73,28 @@
      href: deploy-edge-with-windows-10-updates.md
    - name: Deploy to Windows with Configuration Manager 
 #     href: deploy-edge-with-configuration-manager.md
-     href: /configmgr/apps/deploy-use/deploy-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
-   - name: Deploy to Windows with Intune
+     href: /configmgr/apps/deploy-use/deploy-edge?bc=%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=%2fDeployEdge%2ftoc.json
+   - name: Add Microsoft Edge for Windows 10/11 to Microsoft Intune
 #    href: deploy-edge-with-intune.md
-     href: /intune/apps/apps-windows-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
+     href: /mem/intune/apps/apps-windows-edge/?bc=%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=%2fDeployEdge%2ftoc.json
    - name: Deploy to macOS with Jamf
      href: deploy-edge-mac-jamf.md
-   - name: Deploy to macOS with Intune
+   - name: Add Microsoft Edge to macOS devices using Microsoft Intune 
 #    href: deploy-edge-mac-intune.md
-     href: /intune/apps/apps-edge-macos/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
+     href: /mem/intune/apps/apps-edge-macos/?bc=%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=%2fDeployEdge%2ftoc.json
 # CONFIGURE
 - name: Configure Microsoft Edge
   items:
-   - name: Configure for Windows
+   - name: Configure for Windows with group policies
      href: configure-microsoft-edge.md
    - name: Configure for Windows with Intune
-     href: /mem/intune/configuration/administrative-templates-configure-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
-   - name: Per Site Configuration by Policy
+     href: /mem/intune/configuration/administrative-templates-configure-edge/?bc=%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=%2fDeployEdge%2ftoc.json
+   - name: Configure Microsoft Edge using Initial Preferences settings for the first run
+     href: Initial-preferences-support-on-Microsoft-Edge-browser.md
+   - name: Per-site configuration by policy
      href: Per-Site-Configuration-by-Policy.md
-#     href: configure-edge-with-intune.md
+   - name: Configure Microsoft Edge policy settings with Microsoft Intune
+     href: configure-edge-with-intune.md
    - name: Configure for Windows with Mobile Device Management
      href: configure-edge-with-mdm.md
    - name: Configure for macOS using a .plist
@@ -102,8 +104,34 @@
 # USE ENTERPRISE FEATURES
 - name: Use Microsoft Edge enterprise features 
   items:
+   - name: Microsoft Edge for Business
+     items:
+      - name: Microsoft Edge for Business
+        href: microsoft-edge-for-business.md
+      - name: Recommended configuration settings
+        href: microsoft-edge-for-business-config-recommendations.md
+      - name: Organization branding
+        href: microsoft-edge-organization-branding.md
+   - name: Microsoft Edge management service
+     items:
+      - name: Get started with configuration profiles
+        href: microsoft-edge-management-service.md
+      - name: Monitoring dashboard
+        href: microsoft-edge-management-service-monitoring-dashboard.md
+      - name: Extensions management
+        href: microsoft-edge-management-service-extensions.md
+      - name: Customization settings
+        href: microsoft-edge-management-service-customizations.md
+      - name: Protect Office documents with Microsoft Purview Information Protection
+        href: microsoft-edge-management-service-office-mip.md
+   - name: Microsoft Edge Workspaces
+     href: microsoft-edge-workspaces.md
+   - name: Microsoft Edge for Virtual desktop infrastructure 
+     href: edge-for-virtualized-desktop-infrastructure.md
    - name: Configurations and experimentation
      href: edge-configuration-and-experiments.md
+   - name: Enterprise new tab page
+     href: microsoft-edge-enterprise-ntp.md
    - name: Identity support and configuration
      href: microsoft-edge-security-identity.md
    - name: Microsoft Edge and Enterprise State Roaming
@@ -116,6 +144,8 @@
      items:
       - name: Manage extensions in the enterprise
         href: microsoft-edge-manage-extensions.md
+      - name: Manage the sidebar in Microsoft Edge
+        href: microsoft-edge-sidebar.md
       - name: Use group policies to manage extensions
         href: microsoft-edge-manage-extensions-policies.md
       - name: Self-host Microsoft Edge extensions
@@ -138,6 +168,8 @@
      href: microsoft-edge-pdf.md
    - name: Set Microsoft Edge as the default browser
      href: edge-default-browser.md
+   - name: Split tunnel VPN support for WebRTC
+     href: microsoft-edge-vpn-split-tunneling.md
    - name: Use Microsoft Edge in Internet Explorer mode
      items:
       - name: What is Internet Explorer (IE) mode?
@@ -146,6 +178,10 @@
         href: edge-ie-mode-sitelist.md
       - name: Configure IE mode Policies
         href: edge-ie-mode-policies.md
+      - name: Cloud Site List Management for Internet Explorer (IE) mode
+        href: edge-ie-mode-cloud-site-list-mgmt.md
+      - name: IE Mode Local Site List
+        href: edge-ie-mode-local-site-list.md
       - name: Disable Internet Explorer 11
         href: edge-ie-disable-ie11.md
       - name: Site Discovery and list management
@@ -156,7 +192,7 @@
            href: edge-ie-mode-site-list-manager.md         
       - name: Keep in-page navigation in IE mode
         href: edge-learnmore-inpage-nav.md    
-      - name: Cookie sharing from Microsoft Edge to Internet Explorer
+      - name: Cookie sharing between Microsoft Edge and Internet Explorer
         href: edge-ie-mode-add-guidance-cookieshare.md
       - name: Configurable sites in IE mode
         href: edge-learnmore-configurable-sites-ie-mode.md
@@ -169,7 +205,15 @@
 - name: Microsoft Edge Security
   items:
    - name: Security for your business
-     href: ms-edge-security-for-business.md    
+     href: ms-edge-security-for-business.md
+   - name: Modern security protection for vulnerable legacy apps
+     href: microsoft-edge-security-iemode-safer-than-ie.md 
+   - name: Browse more safely with Microsoft Edge
+     href: microsoft-edge-security-browse-safer.md
+   - name: Changes to Microsoft Edge browser TLS server certificate verification
+     href: microsoft-edge-security-cert-verification.md
+   - name: Identify and interrupt downloads of potentially dangerous files
+     href: microsoft-edge-security-downloads-interruptions.md
    - name: Allow list for Microsoft Edge endpoints
      href: microsoft-edge-security-endpoints.md
    - name: Data Loss Prevention (DLP)
@@ -180,7 +224,7 @@
      href: microsoft-edge-security-password-manager-security.md
    - name: Protect against potentially unwanted applications
      href: microsoft-edge-potentially-unwanted-apps.md
-   - name: Support for Azure AD Conditional Access
+   - name: Microsoft Edge and Conditional Access
      href: ms-edge-security-conditional-access.md
    - name: Support for Application Guard
      href: microsoft-edge-security-windows-defender-application-guard.md
@@ -188,6 +232,8 @@
      href: microsoft-edge-security-smartscreen.md
    - name: Support for Windows Information Protection
      href: microsoft-edge-security-windows-information-protection.md
+   - name: Configure Web Content Filtering on Edge
+     href: microsoft-edge-web-content-filtering.md
 - name: Microsoft Edge Privacy
   items:  
    - name: Configure privacy settings
@@ -199,26 +245,42 @@
   items:
    - name: Browser policy reference
      href: microsoft-edge-policies.md
+   - name: EdgeUpdater policy reference
+     href: microsoft-edge-edgeupdater-policies-mac.md
    - name: Update policy reference
      href: microsoft-edge-update-policies.md
+   - name: Mobile policy reference
+     href: microsoft-edge-mobile-policies.md
    - name: WebView2 policy reference
      href: microsoft-edge-webview-policies.md
    - name: Learn more reference
      items:
       - name: Backwards compatibility for Enterprise New tab page
         href: edge-learnmore-ntp-backward-compatibility.md
+      - name: Block access to consumer accounts
+        href: edge-learnmore-block-access-consumer-accounts.md
       - name: ClickOnce and DirectInvoke
         href: edge-learn-more-co-di.md
       - name: Command-line options to configure proxy settings
         href: edge-learnmore-cmdline-options-proxy-settings.md
-#      - name: Configurable sites in IE mode
-#        href: edge-learnmore-configurable-sites-ie-mode.md
+      - name: Configurable Microsoft Edge commands
+        href: edge-learnmore-configurable-edge-commands.md
+      - name: Considerations for zstd-based Shared Dictionary Compression for HTTP
+        href: learnmore-zsdch-compression.md
+      - name: Copilot in Edge webpage summarization behavior
+        href: edge-learnmore-copilot-page-summary-results.md
       - name: Filter format for URL list-based policies
         href: edge-learnmmore-url-list-filter format.md
+      - name: Microsoft Edge for macOS switches from Microsoft AutoUpdate to EdgeUpdater
+        href: edge-learnmore-edgeupdater-for-macos.md
+      - name: Microsoft Edge will disable modifying document.domain
+        href: edge-learnmore-origin-keyed-agent-cluster.md
 #      - name: Keep in-page navigation in IE mode
 #        href: edge-learnmore-inpage-nav.md
       - name: Mixed content downloads
         href: edge-learnmore-mixed-content-downloads.md
+      - name: Policy filters for the Enterprise personal browser
+        href: edge-learnmore-personal-browser-policies.md
       - name: Progressive rollouts for Stable channel updates
         href: microsoft-edge-update-progressive-rollout.md
       - name: Provision favorites for Microsoft Edge
@@ -227,12 +289,20 @@
         href: edge-learnmore-neededge.md
       - name: Regular Expression 2 (re2.h) syntax
         href: edge-learnmore-regex.md
-      - name: Reset Microsoft Edge data
+      - name: Reset Microsoft Edge data in the cloud
         href: edge-learnmore-reset-data-in-cloud.md
+      - name: Supported categories for Web Content Filtering
+        href: edge-learnmore-wcf-supported-categories.md
+      - name: Throttling for all cross-origin iframes that are display:none and non-visible
+        href: edge-learnmore-iframe-throttling-display.md
+      - name: URL pattern format for Microsoft Edge Enterprise policies
+        href: edge-learnmore-ent-policy-url-patterns.md
       - name: User data directory variables
         href: edge-learnmore-create-user-directory-vars.md
       - name: Using Microsoft Edge rollback for enterprises
         href: edge-learnmore-rollback.md
+      - name: Write a SPNEGO Authenticator for Microsoft Edge on Android
+        href: edge-learnmore-write-spnego-authenticator.md
 - name: Microsoft Edge Videos
   items:
    - name: Microsoft Edge video collection
@@ -247,6 +317,8 @@
      href: microsoft-edge-video-security-dlp.md
    - name: Video - Identity in Microsoft Edge
      href: microsoft-edge-video-identity.md
+   - name: Video - Microsoft Edge for Business
+     href: microsoft-edge-video-msedge-for-business.md
    - name: Video - Microsoft Edge version rollback
      href: microsoft-edge-video-version-rollback.md
    - name: Video - PDF reader in Microsoft Edge
@@ -255,5 +327,7 @@
      href: microsoft-edge-video-security-smartscreen.md
    - name: Video - Security, compatibility, and manageability
      href: microsoft-edge-video-security-compatibility-manageability.md 
-- name: Frequently asked questions
-  href: faqs-edge-in-the-enterprise.yml
+#   - name: Microsoft Edge FAQ
+#     href: microsoft-edge-frequently-asked-questions.md
+#   - name: Frequently asked questions
+#     href: faqs-edge-in-the-enterprise.yml 

@@ -3,10 +3,10 @@ title: "PDF reader in Microsoft Edge"
 ms.author: adigan
 author: dan-wesley
 manager: balajek
-ms.date: 03/01/2021
+ms.date: 07/18/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
+ms.service: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: "Learn about PDF reader in Microsoft Edge."
@@ -18,9 +18,6 @@ PDF files make up a large part of our day-to-day lives. They come in the form of
 
 Microsoft Edge comes with a built-in PDF reader that lets you open your local pdf files, online pdf files, or pdf files embedded in web pages. You can annotate these files with ink and highlighting. This PDF reader gives users a single application to meet web page and PDF document needs. The Microsoft Edge PDF reader is a secure and reliable application that works across the Windows and macOS desktop platforms.
 
-> [!NOTE]
-> This article applies to Microsoft Edge version 77 or later.
-
 ## Prerequisites, support, and constraints
 
 The following table shows which channels and versions of Microsoft Edge support each PDF reader feature.
@@ -30,16 +27,17 @@ The following table shows which channels and versions of Microsoft Edge support 
 | View and print local, online, and embedded PDF files | 79.0.309.71                |
 | Basic form filling<br>(JavaScript forms aren't supported) | 79.0.309.71           |
 |Table of contents| 86.0.622.38 |
-| Page view |Currently being promoted in [Microsoft Edge Insider](https://www.microsoftedgeinsider.com/) channels |
+| Page view | 88.0.705.50 |
 | Caret mode browsing |87.0.664.41 |
 | Inking  | 80.0.361.48            |
 | Ink customization | 83.0.478.54  |
 | Highlight  | 81.0.416.53         |
-| Text notes | Currently being promoted in [Microsoft Edge Insider](https://www.microsoftedgeinsider.com/) channels |
+| Text notes | 88.0.705.50 |
 | Read aloud | 84.0.522.63  |
-| View Microsoft Information Protection (MIP) protected files | Windows support in 80.0.361.48<br>Mac support in 81.0.416.53 |
+| View Microsoft Purview Information Protection protected files in the same business tenant | Windows support in 80.0.361.48<br>Mac support in 81.0.416.53 |
+| View Microsoft Purview Information Protection protected files across business tenants | 91.0.864.37  |
 |  View Information Rights Management (IRM) protected files  | 83.0.478.37            |
-| View and validate Digital Signatures | Available in Canary and Dev channels. Being actively worked on. |
+
 
 ### Constraints
 
@@ -104,12 +102,13 @@ Read aloud for PDF adds the convenience of listening to PDF content while carryi
 
 ### Protected PDFs
 
-[Microsoft Information Protection (MIP)](/microsoft-365/compliance/protect-information?preserve-view=true&view=o365-worldwide) enables users to collaborate with others securely, while adhering to your organization's compliance policies. After a file is protected, the actions users can take on it are determined by the permissions assigned to them.
+[Microsoft Purview Information Protection](/microsoft-365/compliance/protect-information?preserve-view=true&view=o365-worldwide) enables users to collaborate with others securely, while adhering to your organization's compliance policies. After a file is protected, the actions users can take on it are determined by the permissions assigned to them.
 
 > [!IMPORTANT]
 > A license is required for MIP. For more information, see this [Microsoft 365 licensing guidance](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection).
 
 These files can be opened directly in the browser, without the need to download any other software, or install any add-in. This capability integrates the security provided by MIP directly into the browser, providing a seamless workflow.
+You can view MIP Protected files across business tenants. Viewing files using consumer identities currently is not supported.
 
 ![Protected pdf document.](media/microsoft-edge-pdf/pdf-reader-protected-pdf2.png)
 
@@ -125,7 +124,7 @@ If the profile that the user is logged into Microsoft Edge with has at least vie
 
 In this digital world, it becomes important to establish the authenticity and ownership of the content in the document. Certificate-based digital signatures are commonly used in PDF documents to ensure that the content in the document is the same as what the author intended it to be, and has not been changed. With Microsoft Edge, you can view and validate certificate digital signatures in PDFs.
 
-We’re actively working on improving the support to address more scenarios, and are looking forward for feedback about the same.
+We're actively working on improving the support to address more scenarios, and are looking forward for feedback about the same.
 
 ## Accessibility
 

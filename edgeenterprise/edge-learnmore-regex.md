@@ -1,34 +1,40 @@
 ---
 title: "Regular Expression 2 syntax"
-ms.author: comanea
+ms.author: seanlynd
 author: dan-wesley
-manager: seanlyn
-ms.date: 06/09/2020
+manager:  sean.lyndersay
+ms.date: 06/14/2022
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Regular Expression 2 syntax"
 ---
 
 # Regular Expression 2 (re2.h) syntax
 
-Regular expressions are a notation for describing sets of character strings. When a string is in the set described by a regular expression, we often say that the regular expression matches the string.
+Regular expressions are a notation for describing sets of character strings. When a string is in the set described by a regular expression, we say that the regular expression *matches* the string.
 
-The simplest regular expression is a single literal character. Except for the metacharacters like *\*+?()|*, characters match themselves. To match a metacharacter, escape it with a backslash: \+ matches a literal plus character.
+The simplest regular expression is a single literal character. Except for the metacharacters like `*+?()|`, characters match themselves. To match a metacharacter, escape it with a backslash. For example, `\+` matches the literal plus character.
 
 Two regular expressions can be altered or concatenated to form a new regular expression: if *e<sub>1</sub>* matches _s_ and *e<sub>2</sub>* matches _t_, then *e<sub>1</sub>* | *e<sub>2</sub>* matches _s_ or _t_, and *e<sub>1</sub>* *e<sub>2</sub>*  matches _st_.
 
-The metacharacters _\*_ , _+_ , and _?_ are repetition operators: *e<sub>1</sub>* _\*_ matches a sequence of zero or more (possibly different) strings, each of which match *e<sub>1</sub>*; *e<sub>1</sub>* _+_ matches one or more; *e<sub>1</sub>* _?_ matches zero or one.
+The metacharacters `*`, `+`, and `?` are repetition operators: *e<sub>1</sub>* `*` matches a sequence of zero or more (possibly different) strings, each of which match *e<sub>1</sub>*; *e<sub>1</sub>* `+` matches one or more; *e<sub>1</sub>* `?` matches zero or one.
 
-The operator precedence, from weakest to strongest binding, is first alternation, then concatenation, and finally the repetition operators. Explicit parentheses can be used to force different meanings, just as in arithmetic expressions. Some examples: _ab|cd_ is equivalent to _(ab)|(cd)_ ; _ab\*_ is equivalent to _a(b\*)_ .
+Operator precedence, from weakest to strongest binding, is as follows:
 
-The syntax described so far is most of the traditional Unix _egrep_ regular expression syntax. This subset suffices to describe all regular languages: loosely speaking, a regular language is a set of strings that can be matched in a single pass through the text using only a fixed amount of memory. Newer regular expression facilities (notably Perl and those that have copied it) have added many new operators and escape sequences, which make the regular expressions more concise, and sometimes more cryptic, but usually not more powerful.
+- alternation
+- concatenation
+- repetition operators
+
+Explicit parentheses can be used to force different meanings, as in arithmetic expressions. Some examples: `ab|cd` is equivalent to `(ab)|(cd)` ; `ab\` is equivalent to `a(b\)`.
+
+The syntax described so far is most of the traditional Unix _egrep_ regular expression syntax. This subset suffices to describe all regular languages. A regular language is a set of strings that can be matched in a single pass through the text using only a fixed amount of memory. Newer regular expression facilities (notably Perl and those languages that have copied it) have added many new operators and escape sequences. These changes make the regular expressions more concise, and sometimes more cryptic, but not more powerful.
 
 This page lists the regular expression syntax accepted by RE2.
 
-It also lists some syntax accepted by PCRE, PERL and VIM.
+It also lists some syntax accepted by PCRE, PERL, and VIM.
 
 ## Syntax tables
 
@@ -46,12 +52,12 @@ It also lists some syntax accepted by PCRE, PERL and VIM.
 | negated Unicode character class (one-letter name) | \PN |
 | negated Unicode character class | \P{Greek} |
 
-| | Composites |
+|&nbsp;| Composites |
 | --- | --- |
 | xy | x followed by y |
 | x\|y | x or y (prefer x) |
 
-| | Repetitions |
+|&nbsp;| Repetitions |
 | --- | --- |
 | x\* | zero or more x, prefer more |
 | x+ | one or more x, prefer more |
@@ -70,9 +76,9 @@ It also lists some syntax accepted by PCRE, PERL and VIM.
 | x{-n} | (≡ x{n}?) (NOT SUPPORTED) VIM |
 | x= | (≡ x?) (NOT SUPPORTED) VIM |
 
-Implementation restriction: The counting forms x{n,m}, x{n,}, and x{n} reject forms that create a minimum or maximum repetition count above 1000. Unlimited repetitions are not subject to this restriction.
+Implementation restriction: The counting forms `x{n,m}`, `x{n,}`, and `x{n}` reject forms that create a minimum or maximum repetition count above 1000. Unlimited repetitions are not subject to this restriction.
 
-| | Possessive repetitions |
+|&nbsp;| Possessive repetitions |
 | --- | --- |
 | x\*+ | zero or more x, possessive (NOT SUPPORTED) |
 | x++ | one or more x, possessive (NOT SUPPORTED) |
@@ -81,7 +87,7 @@ Implementation restriction: The counting forms x{n,m}, x{n,}, and x{n} reject fo
 | x{n,}+ | n or more x, possessive (NOT SUPPORTED) |
 | x{n}+ | exactly n x, possessive (NOT SUPPORTED) |
 
-| | Grouping |
+|&nbsp;| Grouping |
 | --- | --- |
 | (re) | numbered capturing group (submatch) |
 | (?P&lt;name&gt;re) | named &amp; numbered capturing group (submatch) |
@@ -96,16 +102,16 @@ Implementation restriction: The counting forms x{n,m}, x{n,}, and x{n} reject fo
 | re@&gt; | possessive match of re (NOT SUPPORTED) VIM |
 | %(re) | non-capturing group (NOT SUPPORTED) VIM |
 
-| | Flags |
+|&nbsp;| Flags |
 | --- | --- |
 | i | case-insensitive (default false) |
 | m | multi-line mode: ^ and $ match begin/end line in addition to begin/end text (default false) |
 | s | let . match \n (default false) |
 | U | ungreedy: swap meaning of x\* and x\*?, x+ and x+?, etc (default false) |
 
-Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
+Flag syntax is `xyz` (set) or `-xyz` (clear) or `xy-z` (set `xy`, clear `z`).
 
-|  | Empty strings |
+|&nbsp;| Empty strings |
 | --- | --- |
 | ^ | at beginning of text or line (m=true) |
 | $ | at end of text (like \z not \Z) or line (m=true) |
@@ -127,16 +133,16 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 | re@&lt;! | after text not matching re (NOT SUPPORTED) VIM |
 | \zs | sets start of match (= \K) (NOT SUPPORTED) VIM |
 | \ze | sets end of match (NOT SUPPORTED) VIM |
-| \%^ | beginning of file (NOT SUPPORTED) VIM |
-| \%$ | end of file (NOT SUPPORTED) VIM |
-| \%V | on screen (NOT SUPPORTED) VIM |
-| \%# | cursor position (NOT SUPPORTED) VIM |
-| \%&#39;m | mark m position (NOT SUPPORTED) VIM |
-| \%23l | in line 23 (NOT SUPPORTED) VIM |
-| \%23c | in column 23 (NOT SUPPORTED) VIM |
-| \%23v | in virtual column 23 (NOT SUPPORTED) VIM |
+| \\%^ | beginning of file (NOT SUPPORTED) VIM |
+| \\%$ | end of file (NOT SUPPORTED) VIM |
+| \\%V | on screen (NOT SUPPORTED) VIM |
+| \\%# | cursor position (NOT SUPPORTED) VIM |
+| \\%&#39;m | mark m position (NOT SUPPORTED) VIM |
+| \\%23l | in line 23 (NOT SUPPORTED) VIM |
+| \\%23c | in column 23 (NOT SUPPORTED) VIM |
+| \\%23v | in virtual column 23 (NOT SUPPORTED) VIM |
 
-|  | Escape sequences |
+|&nbsp;| Escape sequences |
 | --- | --- |
 | \a | bell (≡ \007) |
 | \f | form feed (≡ \014) |
@@ -177,7 +183,7 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 | \%u1234 | Unicode character 0x1234 (NOT SUPPORTED) VIM |
 | \%U12345678 | Unicode character 0x12345678 (NOT SUPPORTED) VIM |
 
-|  | Character class elements |
+|&nbsp;| Character class elements |
 | --- | --- |
 | x | single character |
 | A-Z | character range (inclusive) |
@@ -186,7 +192,7 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 | \p{Foo} | Unicode character class Foo |
 | \pF | Unicode character class F (one-letter name) |
 
-|  | Named character classes as character class elements |
+|&nbsp;| Named character classes as character class elements |
 | --- | --- |
 | [\d] | digits (≡ \d) |
 | [^\d] | not digits (≡ \D) |
@@ -227,7 +233,7 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 | [[:word:]] | word characters (≡ [0-9A-Za-z\_]) |
 | [[:xdigit:]] | hex digit (≡ [0-9A-Fa-f]) |
 
-| | Unicode character class names--general category |
+|&nbsp;| Unicode character class names--general category |
 | --- | --- |
 | C | other |
 | Cc | control |
@@ -428,7 +434,7 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 | Yi |
 | Zanabazar\_Square |
 
-|  | Vim character classes |
+|&nbsp;| Vim character classes |
 | --- | --- |
 | \i | identifier character (NOT SUPPORTED) VIM |
 | \I | \i except digits (NOT SUPPORTED) VIM |
@@ -465,7 +471,7 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 | \V | verynomagic (NOT SUPPORTED) VIM |
 | \Z | ignore differences in Unicode combining characters (NOT SUPPORTED) VIM |
 
-|  | Magic |
+| &nbsp; | Magic |
 | --- | --- |
 | (?{code}) | arbitrary Perl code (NOT SUPPORTED) PERL |
 | (??{code}) | postponed arbitrary Perl code (NOT SUPPORTED) PERL |
@@ -477,7 +483,7 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 | (?&amp;name) | recursive call to named group (NOT SUPPORTED) |
 | (?P=name) | named backreference (NOT SUPPORTED) |
 | (?P&gt;name) | recursive call to named group (NOT SUPPORTED) |
-| (?(cond)true|false) | conditional branch (NOT SUPPORTED) |
+| (?(cond)true\|false) | conditional branch (NOT SUPPORTED) |
 | (?(cond)true) | conditional branch (NOT SUPPORTED) |
 | (\*ACCEPT) | make regexps more like Prolog (NOT SUPPORTED) |
 | (\*COMMIT) | (NOT SUPPORTED) |
@@ -501,7 +507,7 @@ Flag syntax is xyz (set) or -xyz (clear) or xy-z (set xy, clear z).
 > Portions of this page are modifications based on work created and shared by Chromium.org and used according to terms 
   described in the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). The original page can be found [here](https://github.com/google/re2/wiki/Syntax).
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
 ## See also
 

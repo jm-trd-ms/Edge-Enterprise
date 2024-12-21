@@ -1,13 +1,13 @@
 ---
 title: "Plan your kiosk mode transition"
-ms.author: aguta
-author: aguta
-manager: srugh
-ms.date: 02/26/2021
+ms.author: archandr
+author: dan-wesley
+manager: likuba
+ms.date: 07/18/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Plan your kiosk mode transition"
 ---
@@ -17,10 +17,10 @@ description: "Plan your kiosk mode transition"
 This article provides guidance on how to transition your kiosk from Microsoft Edge Legacy to Microsoft Edge.  
 
 > [!NOTE]
-> This article applies to Microsoft Edge Stable, Beta and Dev Channels, version 87 or later.
+> This article applies to Microsoft Edge Stable, Beta and Dev Channels.
 
 > [!IMPORTANT]
-> When support ends for Microsoft Edge Legacy on March 9, 2021, it will be removed and replaced with Microsoft Edge on Chromium as part of the Windows Update in April. For details, go to [this blog post](https://aka.ms/EdgeLegacyEOS). To continue to use your browser-based kiosk scenarios, you need to install Microsoft Edge on Chromium and set up kiosk mode prior to April’s Windows Update release to your device.
+> When support ends for Microsoft Edge Legacy on March 9, 2021, it will be removed and replaced with Microsoft Edge on Chromium as part of the Windows Update in April. For details, go to [this blog post](https://aka.ms/EdgeLegacyEOS). To continue to use your browser-based kiosk scenarios, you need to install Microsoft Edge on Chromium and set up kiosk mode prior to April's Windows Update release to your device.
 
 ## Kiosk setup steps
 
@@ -125,4 +125,4 @@ Kiosk mode may be an important part of your everyday business, so we want to hel
 ## See also
 
 - [Microsoft Edge Enterprise landing page](https://aka.ms/EdgeEnterprise)
-- [New Microsoft Edge to replace Microsoft Edge Legacy with April’s Windows 10 Update Tuesday release](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224)
+- [New Microsoft Edge to replace Microsoft Edge Legacy with April's Windows 10 Update Tuesday release](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224)

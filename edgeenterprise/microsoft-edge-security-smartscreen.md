@@ -2,12 +2,12 @@
 title: "Microsoft Edge support for Microsoft Defender SmartScreen"
 ms.author: kvice
 author: dan-wesley
-manager: srugh
-ms.date: 02/05/2021
+manager: likuba
+ms.date: 07/18/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Microsoft Edge support for Microsoft Defender SmartScreen"
 ---
@@ -15,9 +15,6 @@ description: "Microsoft Edge support for Microsoft Defender SmartScreen"
 # Microsoft Edge support for Microsoft Defender SmartScreen
 
 This article describes the benefits of using Microsoft Defender SmartScreen, explains how it works, and describes how to configure this Microsoft Edge feature.
-
-> [!NOTE]
-> This article applies to Microsoft Edge version 77 or later.
 
 Microsoft Defender SmartScreen is a service that Microsoft Edge uses to keep you safe while you browse the web. Microsoft Defender SmartScreen provides an early warning system against websites that might engage in phishing attacks or attempt to distribute malware through a focused attack. For more information, watch [Video: Secure browsing on Microsoft Edge](microsoft-edge-video-security-smartscreen.md).
 

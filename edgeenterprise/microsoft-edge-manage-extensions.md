@@ -3,11 +3,11 @@ title: "Manage Microsoft Edge extensions in the enterprise"
 ms.author: aspoddar
 author: AndreaLBarr
 manager: balajek
-ms.date: 04/08/2021
+ms.date: 01/12/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Manage Microsoft Edge extensions in the enterprise"
 ---
@@ -17,11 +17,11 @@ description: "Manage Microsoft Edge extensions in the enterprise"
 This article provides best practice guidance for admins who are managing Microsoft Edge extensions in their organizations. You can use the information in this article to develop a strategy for managing extensions in your organization.
 
 > [!NOTE]
-> This article applies to Microsoft Edge version 77 or later.
+> The Microsoft Edge management service, a dedicated and simplified management tool in the Microsoft 365 admin center, is rolling out now. [Learn more](/deployedge/microsoft-edge-management-service).
 
 ## Introduction
 
-Organizations want to protect corporate and user data and evaluate browser extensions to ensure that they’re safe and relevant to their enterprise. Admins want to:
+Organizations want to protect corporate and user data and evaluate browser extensions to ensure that they're safe and relevant to their enterprise. Admins want to:
 
 - Prevent bad apps and extensions from being installed.
 - Keep extensions that users need to do their job.
@@ -36,15 +36,15 @@ This article is the first in a series that that helps admins manage extensions t
 
 ## Things to consider when managing extensions
 
-Your users need access to certain apps, sites, and extensions to do their jobs while at the same time protecting users and company data. An effective security strategy involves asking the right questions for your enterprise and how extensions can fit your company’s needs. Some of the key questions to ask are:
+Your users need access to certain apps, sites, and extensions to do their jobs while at the same time protecting users and company data. An effective security strategy involves asking the right questions for your enterprise and how extensions can fit your company's needs. Some of the key questions to ask are:
 
 - What regulations and compliance measures do I need to adhere to?
-- Do some extensions ask for overly broad permissions, which could go against my company’s data security policies?
-- How much user or corporate data is stored on my users’ devices?
+- Do some extensions ask for overly broad permissions, which could go against my company's data security policies?
+- How much user or corporate data is stored on my users' devices?
 
 As you answer these questions, you can use the granular policies that Microsoft Edge provides to:
 
-- Block or allow extensions on users’ computers based on your data protection policies.
+- Block or allow extensions on users' computers based on your data protection policies.
 - Force-install extensions on your users' devices so they have tools that they need to be productive.
 - Allowlist or blocklist extensions to allow the least amount of rights needed for your users to do their  work.
 
@@ -55,7 +55,7 @@ The traditional model for managing extensions uses the allowlist and blocklist a
 Extensions can require rights to make changes on a device or a web page to run properly. These rights are called permissions. Developers must list what rights and access their extensions need. There are two main categories for permissions, and many extensions need both of the following permissions:
 
 - Host permissions require the extension to list webpages it may view or modify.
-- Device permissions are the rights needed by an extension on the device where it’s running.
+- Device permissions are the rights needed by an extension on the device where it's running.
 
 Some examples of these permissions are: access to a USB port, storage or viewing screen, and communicating with native programs.  
 
@@ -65,11 +65,11 @@ Some examples of these permissions are: access to a USB port, storage or viewing
 
 The extensions options assume that you already have Microsoft Edge managed for your users. For more information about setting up administrative templates for Microsoft Edge policies, see:
 
--	[Configure Microsoft Edge policy settings on Windows](https://docs.microsoft.com/DeployEdge/configure-microsoft-edge)
--	[Configure for Windows with Intune](https://docs.microsoft.com/mem/intune/configuration/administrative-templates-configure-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json)
--	[Configure for Windows with Mobile Device Management](https://docs.microsoft.com/deployedge/configure-edge-with-mdm)
--	[Configure for macOS using a .plist](https://docs.microsoft.com/deployedge/configure-microsoft-edge-on-mac)
--	[Configure for macOS with Jamf](https://docs.microsoft.com/deployedge/configure-microsoft-edge-on-mac-jamf)
+-    [Configure Microsoft Edge policy settings on Windows](/DeployEdge/configure-microsoft-edge)
+-    [Configure for Windows with Intune](/mem/intune/configuration/administrative-templates-configure-edge?bc=%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=%2fDeployEdge%2ftoc.json)
+-    [Configure for Windows with Mobile Device Management](/deployedge/configure-edge-with-mdm)
+-    [Configure for macOS using a .plist](/deployedge/configure-microsoft-edge-on-mac)
+-    [Configure for macOS with Jamf](/deployedge/configure-microsoft-edge-on-mac-jamf)
 
 The configuration steps in this article are for Windows, for the corresponding implementation in MAC/Linux, see the Microsoft Edge browser policy reference.
 
@@ -82,8 +82,8 @@ Most organizations should manage extensions by their permissions and what websit
 
 Using this approach saves time because you only need to set these once. And with the run-time hosts policy, your most important sites will be protected.There are other options as well such as:
 
--	Force install extensions – Lets you install extensions silently.
--	Allowlist/blocklist (if required) – Decide what extensions are allowed to be installed.
+-    Force install extensions – Lets you install extensions silently.
+-    Allowlist/blocklist (if required) – Decide what extensions are allowed to be installed.
 
 Use the following steps as a guide to decide which extensions to allow in your organization.
 
@@ -109,7 +109,7 @@ Use the following steps as a guide to decide which extensions to allow in your o
 
    - **Required extensions**. This list could be organized by department, office location, or other relevant information.
    - **Extension Allowlist**. Required extensions with permissions that may be blocked but will be allowed to run. These extensions are needed by your users or are determined to not be a risk through conversations with the vendor.
-   - **Extension Blocklist**. Extensions that are blocked from installation. The extensions in this list have the permissions that aren’t allowed to run. Also include the core sites and domains to be kept secure and not allowed extension access. Later you can compare this blocklist to others you already have in place. You might find that you can relax your current blocklist policies.
+   - **Extension Blocklist**. Extensions that are blocked from installation. The extensions in this list have the permissions that aren't allowed to run. Also include the core sites and domains to be kept secure and not allowed extension access. Later you can compare this blocklist to others you already have in place. You might find that you can relax your current blocklist policies.
 
 5. Present your list to your stakeholders and the IT team to get buy in.
 6. Test out the new policy in your lab or with a small pilot in your organization.

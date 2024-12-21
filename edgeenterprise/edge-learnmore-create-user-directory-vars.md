@@ -3,11 +3,11 @@ title: "Create Microsoft Edge user data directory variables"
 ms.author: brianalt
 author: AndreaLBarr
 manager: srugh
-ms.date: 04/21/2021
+ms.date: 03/28/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Learn how to create Microsoft Edge user data directory variables"
 ---
@@ -16,11 +16,9 @@ description: "Learn how to create Microsoft Edge user data directory variables"
 
 This article explains how you can use data directory variables instead of using hard-coded paths when modifying Microsoft Edge.
 
->[!NOTE]
->This article applies to Microsoft Edge version 77 or later.
 ## Path variables
 
-Policies for modifying data directory paths (For example, configuring the [UserDataDir](microsoft-edge-policies.md#userdatadir) or [DownloadDirectory](microsoft-edge-policies.md#downloaddirectory) support variables. When configuring these policies, you can use variables instead of hard-coded paths. For example, to store your profile data under user local application data on Windows instead of the default location. Set the [UserDataDir](microsoft-edge-policies.md#userdatadir) policy to **${local_app_data}\Edge\Profile**. On most Windows 10 installations, this path resolves to *C:\Users\\&lt;Current-user&gt;\AppData\Local\Microsoft\Edge\Profile*.
+Policies for modifying data directory paths (For example, configuring the [UserDataDir](microsoft-edge-policies.md#userdatadir) or [DownloadDirectory](microsoft-edge-policies.md#downloaddirectory) support variables). When configuring these policies, you can use variables instead of hard-coded paths. For example, to store your profile data under user local application data on Windows instead of the default location. Set the [UserDataDir](microsoft-edge-policies.md#userdatadir) policy to **${local_app_data}\Edge\Profile**. On most Windows 10 installations, this path resolves to *C:\Users\\&lt;Current-user&gt;\AppData\Local\Microsoft\Edge\Profile*.
 
 >[!NOTE]
 >To view the current  **Profile path**, open the **About version** page (type "edge://version"). The **Profile path** follows this format: *C:\Users\\&lt;Current-user&gt;\AppData\Local\Microsoft\Edge\User Data\Default*.
@@ -33,7 +31,7 @@ Review the following guidance before using variables for paths.
 - To avoid errors caused by applications starting from different locations on different occasions, make sure that paths are absolute.
 - Every variable can occur only once in a path. For most of them, this is the only meaningful way to use variables, because they resolve to absolute paths.
 - Almost all policies will create the path if it doesn't exist (if possible in the existing circumstances).
-- Using network locations for some policies can lead to unexpected results due to differences in how different versions/channels of Microsoft Edge handle the folder structure.
+- Unless documentation for a specific policy advises otherwise, using network paths for any Microsoft Edge policy value is unsupported. Attempting to have the browser use files from a network location can lead to stability issues, including hangs, crashes, and profile corruption.
 
 ### Supported path variables
 
@@ -57,7 +55,7 @@ Microsoft Edge supports the following path variables.
 | **${global_app_data}** | The system-wide Application Data folder. Example: *C:\AppData* |
 | **${program_files}** | The Program Files folder for the current process. This  folder  depends on whether it's a 32-bit or 64-bit process. Example resolution: *C:\Program Files (x86)* |
 | **${windows}** | The Windows folder. Example: *C:\Windows* |
-| **${client_name)** | The name of the client PC connected to an RDP or Citrix session. This variable is empty if it's used from a local session. If it's used in a path, prefix it with something that's guaranteed not to be empty. Example: *C:\edge_profiles\session_${client_name}* resolves to *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* and *C:\edge_profiles\session_&lt;SomePCname&gt;* for remote sessions. |
+| **${client_name}** | The name of the client PC connected to an RDP or Citrix session. This variable is empty if it's used from a local session. If it's used in a path, prefix it with something that's guaranteed not to be empty. Example: *C:\edge_profiles\session_${client_name}* resolves to *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* and *C:\edge_profiles\session_&lt;SomePCname&gt;* for remote sessions. |
 | **${session_name}** | The name of the active session. Use this name to distinguish multiple simultaneously connected remote sessions that are using a single user profile. Example: *WinSta0 for local desktop sessions* |
 
 #### macOS only
@@ -72,7 +70,7 @@ Microsoft Edge supports the following path variables.
 >[!NOTE]
 >Portions of this page are modifications based on work created and shared by Chromium.org and used according to terms  described in the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). The original page can be found [here](https://www.chromium.org/administrators/policy-list-3/user-data-directory-variables).
   
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 ## See also
 
 - [Microsoft Edge Enterprise landing page](https://aka.ms/EdgeEnterprise)

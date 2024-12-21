@@ -1,25 +1,46 @@
 ---
 title: "Microsoft Edge and Microsoft Defender Application Guard"
-ms.author: srugh
+ms.author: archandr
 author: dan-wesley
-manager: seanlyn
-ms.date: 02/05/2021
+manager: likuba
+ms.date: 09/27/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Microsoft Edge support for Microsoft Defender Application Guard"
 ---
 
 # Microsoft Edge support for Microsoft Defender Application Guard
 
-This article describes how Microsoft Edge supports Microsoft Defender Application Guard (Application Guard).
+> [!IMPORTANT]
+> Microsoft Defender Application Guard, including the [Windows Isolated App Launcher APIs](/windows/win32/api/isolatedapplauncher), is deprecated for Microsoft Edge for Business and [will no longer be updated](/windows/whats-new/deprecated-features). Starting with Windows 11, version 24H2, Microsoft Defender Application Guard, including the [Windows Isolated App Launcher APIs](/windows/win32/api/isolatedapplauncher/), is no longer available.
+>
+>**Existing installations of Application Guard**
+>
+>This deprecation does not impact the existing installations of Microsoft Defender Application Guard (MDAG). Organizations can continue to use Application Guard on current versions of Windows, but we recommend that security admins evaluate their security requirements going forward. This feature might be removed in a future Windows release, but it will continue to be maintained for existing installations on Windows.
+>
+>**Deprecation considerations**
+>
+>Deprecation includes the following elements of Application Guard.
+>- If your organization requires container-based isolation, we recommend [Windows Sandbox](/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) or [Azure Virtual Desktop (AVD)](/azure/virtual-desktop/terminology).
+>- Because Application Guard is deprecated there will not be a migration to Edge Manifest V3. The corresponding extensions and associated [Windows Store app](https://apps.microsoft.com/detail/9N8GNLC8Z9C8?hl=en-us&gl=US) will not be available after May 2024.
+>This affects the following browsers: *Chrome* and *Firefox*. If you want to block unprotected browsers until you are ready to retire MDAG usage in your enterprise, we recommend using AppLocker policies or [Microsoft Edge management service](/deployedge/microsoft-edge-management-service).
 
-> [!NOTE]
-> This article applies to Microsoft Edge version 77 or later.
+> [!TIP]
+> Download the [Microsoft Edge for Business Security Whitepaper](https://aka.ms/EdgeSecurityWhitepaper/Docs) to learn more about the capabilities that make Edge for Business a secure enterprise browser.
+>
+>The additional security features in Edge make it very secure without needing Application Guard. The growing list of security features includes:
+>
+>*    Defender SmartScreen for the anti-phishing and malware support and URL scanning and blocking.
+>*    Enhanced security mode for protecting against memory-related vulnerabilities by disabling just-in-time JavaScript compilation (and other protections).
+>*    Website typo protection for misspelled websites.
+>*    Data Loss Prevention to identify, monitor, and automatically protect sensitive items.
 
 ## Overview
+
+This article describes how Microsoft Edge supports Microsoft Defender Application Guard (Application Guard).
 
 Security architects in the enterprise must deal with the tension that exists between productivity and security. It's relatively easy to lock down a browser and only allow a handful of trusted sites to load. This approach will improve the overall security posture but is arguably less productive. If you make it less restrictive to improve productivity, you increase the risk profile. It's a hard balance to strike!
 
@@ -29,7 +50,7 @@ A key security strategy to consider is the [Assume Breach Methodology](/office36
 
 ## About Application Guard
 
-Designed for Windows 10 and Microsoft Edge, Application Guard uses a hardware isolation approach. This approach lets untrusted site navigation launch inside a container. Hardware isolation helps enterprises safeguard their corporate network and data in case users visit a site that is compromised or is malicious.
+Designed for Windows 10/11 and Microsoft Edge, Application Guard uses a hardware isolation approach. This approach lets untrusted site navigation launch inside a container. Hardware isolation helps enterprises safeguard their corporate network and data in case users visit a site that is compromised or is malicious.
 
 The enterprise administrator defines what are trusted sites, cloud resources, and internal networks. Everything that's not in the trusted sites list is considered untrusted. These sites are isolated from the corporate network and data on the user's device.
 
@@ -45,6 +66,35 @@ The next screenshot shows an example of Application Guard's message showing that
 ## What's new
 
 Application Guard support in the new Microsoft Edge  browser has functional parity with Microsoft Edge Legacy and includes several improvements.
+
+### Enable Upload Blocking
+
+Starting from Microsoft Edge 96, admins now have the option to block uploads while in the container, meaning that users cannot upload files from their local device to their Application Guard instance. This support can be controlled via policy. You can update the Edge policy [ApplicationGuardUploadBlockingEnabled](/deployedge/microsoft-edge-policies#applicationguarduploadblockingenabled) to enable or disable uploads in the container.
+
+### Enable Application Guard in passive mode and browse Edge normally
+
+Starting from Microsoft Edge 94, users now have the option to configure passive mode, meaning that Application Guard ignores the site list configuration and users can browse Edge normally. This support can be controlled via policy. You can update the Edge policy [ApplicationGuardPassiveModeEnabled](/deployedge/microsoft-edge-policies#applicationguardpassivemodeenabled) to enable or disable passive mode.
+
+> [!Note]
+> This policy ONLY impacts Edge, so navigations from other browsers might get redirected to the Application Guard Container if you have the corresponding extensions enabled.
+
+### Favorites synchronizing from the host to the container
+
+Some of our customers have been asking for favorites sync between the host browser and the container in Application Guard. Starting from Microsoft Edge 91, users now have the option to configure Application Guard to synchronize their favorites from the host to the container. This ensures new favorites appear on the container as well.
+
+This support can be controlled via policy. You can update the Edge policy [ApplicationGuardFavoritesSyncEnabled](/deployedge/microsoft-edge-policies#applicationguardfavoritessyncenabled) to enable or disable favorites sync.
+
+> [!Note]
+> For security reasons, favorites sync is only possible from the host to the container and not the other way around. To ensure a unified list of favorites across the host and the container, we have disabled favorites management inside the container.
+
+### Identify network traffic originating from the container
+
+Several customers are using WDAG in a specific configuration where they want to identify network traffic coming from the container. Some of the scenarios for this are:
+
+- To restrict access to only a handful of untrusted sites
+- To allow internet access from the container only
+
+Starting with Microsoft Edge version 91, there's built in support to tag network traffic originating from Application Guard containers, allowing enterprises to use proxy to filter out traffic and apply specific policies. You can use the header to identify which traffic is through the container or the host using [ApplicationGuardTrafficIdentificationEnabled](/deployedge/microsoft-edge-policies#applicationguardtrafficidentificationenabled).
 
 ### Extension support inside the container
 
@@ -85,11 +135,11 @@ Microsoft Edge Legacy updates in the container are part of the Windows OS update
 
 The following  requirements apply to devices using Application Guard with Microsoft Edge:
 
-- Windows 10 1809 (RS5) and above.
+- Windows 10 1809 (Windows 10 October 2018 Update) and above.
 - Only Windows client SKUs
 
   > [!NOTE]
-  > Application Guard is only supported on Windows 10 Pro and Windows 10 Enterprise SKUs.
+  > Application Guard is only supported on Windows 10/11 Pro and Windows 10/11 Enterprise SKUs.
 
 - One of the management solutions described in [Software requirements](/windows/security/threat-protection/microsoft-defender-application-guard/reqs-md-app-guard#software-requirements)
 
@@ -99,10 +149,14 @@ The following articles provide the information you need to install, configure, a
 
 - [System requirements](/windows/security/threat-protection/microsoft-defender-application-guard/reqs-md-app-guard)
 - [Install Microsoft Defender Application Guard](/windows/security/threat-protection/microsoft-defender-application-guard/install-md-app-guard)
-- [Configure Microsoft Defender group policy settings](/windows/security/threat-protection/microsoft-defender-application-guard/configure-md-app-guard)
+- [Configure Application Guard group policy settings](/windows/security/threat-protection/microsoft-defender-application-guard/configure-md-app-guard)
 - [Test Application Guard](/windows/security/threat-protection/microsoft-defender-application-guard/test-scenarios-md-app-guard)
 
 ## Frequently Asked Questions
+
+### Is Application Guard being deprecated?
+
+Yes, Microsoft Defender Application Guard, including the [Windows Isolated App Launcher APIs](/windows/win32/api/isolatedapplauncher), will be deprecated for Microsoft Edge for Business and will no longer be updated.
 
 ### Does Application Guard work in IE mode?
 
@@ -111,6 +165,32 @@ IE mode supports Application Guard functionality, but we don't anticipate much u
 ### Do I need to install the Application Guard Chrome extension?
 
 No, the Application Guard feature is natively supported in Microsoft Edge. In fact, the Application Guard Chrome extension isn't a supported configuration in Microsoft Edge.
+
+### Can employees download documents from the Application Guard Edge session onto host devices?
+
+In Windows 10 Enterprise edition, version 1803, users are able to download documents from the isolated Application Guard container to the host PC. This capability is managed by policy.
+
+In Windows 10 Enterprise edition, version 1709, or Windows 10 Professional edition, version 1803, it is not possible to download files from the isolated Application Guard container to the host computer. However, employees can use the Print as PDF or Print as XPS options and save those files to the host device.
+
+### Can employees copy and paste between the host device and the Application Guard Edge session?
+
+Depending on your organization's settings, employees can copy and paste images (.bmp) and text to and from the isolated container.
+
+### Why don't employees see their favorites in the Application Guard Edge session?
+
+Depending on your organization's settings, it might be that Favorites Sync is turned off. To manage the policy, see: Microsoft Edge and Microsoft Defender Application Guard | Microsoft Docs.
+
+### Why aren't employees able to see their extensions in the Application Guard Edge session?
+
+Make sure to enable the extensions policy on your Application Guard configuration.
+
+### My extension doesn't seem to work in Edge Application Guard?
+
+If the extensions policy is enabled for MDAG in configuration, check if your extension requires Native Message Handling components, those extensions are not supported in the Application Guard container.
+
+### I'm trying to watch playback video with HDR, why is the HDR option missing?
+
+In order for HDR video playback to work in the container, vGPU Hardware Acceleration needs to be enabled in Application Guard.
 
 ### Are there any other platform related FAQs?
 

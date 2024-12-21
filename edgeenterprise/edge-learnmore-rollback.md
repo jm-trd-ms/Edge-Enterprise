@@ -1,13 +1,13 @@
 ---
 title: "Microsoft Edge rollback for enterprises"
-ms.author: v-danwes
+ms.author: archandr
 author: dan-wesley
-manager: srugh
-ms.date: 02/04/2021
+manager: likuba
+ms.date: 03/27/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "How to roll back Microsoft Edge to a previous version"
 ---
@@ -16,16 +16,13 @@ description: "How to roll back Microsoft Edge to a previous version"
 
 This article describes how to roll back to a previous version of Microsoft Edge using the rollback feature. To learn more about this feature, watch [Video: Microsoft Edge version rollback](microsoft-edge-video-version-rollback.md).
 
->[!NOTE]
->This article applies to Microsoft Edge version 86 or later.
-
 ## Introduction to rollback
 
 Rollback lets you replace your Microsoft Edge browser version with an earlier version. This feature is designed to be a safety net for enterprises deploying Microsoft Edge. It provides a way to troubleshoot issues with Microsoft Edge. The benefits of rollback are the ability to revert to previous browser version easily and quickly. Rollback reduces the potential impact that a Microsoft Edge issue has on business operations.
 
 ## Before you begin
 
-It's important to understand how the rollback feature is installed in a Microsoft Edge environment. You can deploy rollback using two different methods: manually with an MSI or by using Microsoft Edge update and Group Policy. We also wencourage using a selection of Group Policies for a smoother deployment.
+It's important to understand how the rollback feature is installed in a Microsoft Edge environment. You can deploy rollback using two different methods: manually with an MSI or by using Microsoft Edge update and Group Policy. We also encourage using a selection of Group Policies for a smoother deployment.
 
 ### Recommendations
 
@@ -63,6 +60,8 @@ Use the following steps to roll back manually with an MSI.
      > For more information about msiexec, see [msiexec](/windows-server/administration/windows-commands/msiexec).
    - Close and reopen Microsoft Edge to verify that the rollback worked. Under **Settings and more** (ALT + F), go to **Settings** and select **About Microsoft Edge**.
 
+To deploy an MSI with Microsoft Endpoint Manager, see the [Create and Deploy an Application with Configuration Manager](/mem/configmgr/apps/get-started/create-and-deploy-an-application) guide. During the Create Application Wizard step, add the `ALLOWDOWNGRADE=1` option to the Installation Program, e.g. `msiexec /I FileName.msi /qn ALLOWDOWNGRADE=1`.
+
 ## Enable rollback with Microsoft Edge update and Group Policy
 
 Use the following steps to enable rollback with Microsoft Edge update and Group Policy.
@@ -94,7 +93,7 @@ The following group policies and settings are highly recommended for using rollb
 
 #### Sync Group Policies
 
-- ForceSync. Set ForceSync to enabled. This policy will force enable Sync on all Azure Active Directory (Azure AD) users. This policy is only effective for Microsoft Edge versions 86 and later.
+- ForceSync. Set ForceSync to enabled. This policy will force enable Sync on all Microsoft Entra users. This policy is only effective for Microsoft Edge versions 86 and later.
 - The *Configure the list of the types that are excluded from synchronization policy* allows admins to control what data can be synced by users.
 
 #### Browser restart Group Policies

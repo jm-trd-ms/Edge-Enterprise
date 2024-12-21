@@ -2,12 +2,12 @@
 title: "Keep in-page navigation in Internet Explorer mode"
 ms.author: shisub
 author: dan-wesley
-manager: srugh
-ms.date: 05/01/2020
+manager: archandr
+ms.date: 07/18/2024
 audience: ITPro
 ms.topic: conceptual
-ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.service: microsoft-edge
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: "Keep in-page navigation in Internet Explorer mode"
 ---
@@ -18,18 +18,15 @@ You can use this policy as a temporary solution to force all in-page navigation 
 
 An in-page navigation is started from a link, a script, or a form on the current page. It can also be a server-side redirect of a previous in-page navigation attempt. Conversely, a user can start a navigation that isn't in-page that's independent of the current page in several ways by using the browser controls. For example, using the address bar, the back button, or a favorite link.
 
->[!NOTE]
->This article applies to Microsoft Edge version 81 or later.
-
 ## Prerequisites
 
 The following Windows updates are required for this policy:
 
+- Windows 11
 - Windows 10 version 1909 & 1903, Windows Server version 1909 & 1903  ([KB4532695](https://support.microsoft.com/help/4532695))
 - Windows 10 version 1809, Windows Server version 1809, Windows Server 2019 ([KB4534321](https://support.microsoft.com/help/4534321))
 - Windows 10 version 1803 ([KB4534308](https://support.microsoft.com/help/4534308))
 - Windows 10 version 1709 ([KB4534318](https://support.microsoft.com/help/4534318))
-
 
 ## About this policy
 
