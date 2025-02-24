@@ -35,6 +35,8 @@ To manage AI settings for a profile, navigate to the **enterprise secure AI** ta
 - https://you.com
 - https://writesonic.com/chat
 - https://cohere.com/coral
+- https://deepseek.me
+- https://deepseek.com 
 
 Disabling this feature will automatically remove these URLs from the policy, even if they were manually added beforehand. Values not included in this dynamic URL set will remain unaffected.
 
