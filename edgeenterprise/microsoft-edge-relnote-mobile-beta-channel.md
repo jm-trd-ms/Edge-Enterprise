@@ -34,8 +34,8 @@ Fixed various bugs and performance issues.
 
 ### General updates
 
-[iOS] Upgrade MAM Tunnel SDK to version 1.2.4
-[iOS] Upgrade Intune MAM SDK to version 20.3.0
+- [iOS] Upgrade MAM Tunnel SDK to version 1.2.4
+- [iOS] Upgrade Intune MAM SDK to version 20.3.0
 
 ### New Policies
 
@@ -46,7 +46,7 @@ By default, AllowListURLs and BlockListURLs apply only at the navigation level. 
 
 - [iOS] Fix the issue about APP Proxy fails to function properly due to CA Remediation Cache
 - [iOS] Fix the issue about sign-in page crash under InPrivate mode when launching
-- Android] Fix managed bookmark does not show issue in first launch
+- [Android] Fix managed bookmark does not show issue in first launch
 
 ### New enhancements
 
