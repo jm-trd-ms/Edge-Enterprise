@@ -3,7 +3,7 @@ title: "Microsoft Edge release notes for Mobile Beta Channel"
 ms.author: archandr
 author: vmliramichael
 manager: likuba
-ms.date: 02/18/2025
+ms.date: 02/26/2025
 audience: ITPro
 ms.topic: conceptual
 ms.service: microsoft-edge
@@ -27,6 +27,31 @@ Archived versions of these release notes are available at [Archived release note
 
 > [!NOTE]
 > Microsoft Edge Web Platform constantly evolves to improve user experience, security, and privacy. To learn more, see [Site compatibility-impacting changes coming to Microsoft Edge](/microsoft-edge/web-platform/site-impacting-changes).
+
+## Version 134.0.3124.32 (Android and iOS): February 26, 2025
+
+Fixed various bugs and performance issues.
+
+### General updates
+
+[iOS] Upgrade MAM Tunnel SDK to version 1.2.4
+[iOS] Upgrade Intune MAM SDK to version 20.3.0
+
+### New Policies
+
+[Android] Support manages web sub resource blocking policy
+By default, AllowListURLs and BlockListURLs apply only at the navigation level. When you embed blocked URLs (either URLs configured in BlockListURLs or URLs not configured in AllowListURLs) as subresources within a web page, those subresource URLs aren't blocked. To further restrict these subresources, you can configure the new policy to block them. For example, if you set `com.microsoft.intune.mam.managedbrowser.ManageRestrictedSubresourceEnabled=true`, subresource URLs are blocked if they're listed as blocked.
+
+### Bug fixes
+
+[iOS] Fix the issue about APP Proxy fails to function properly due to CA Remediation Cache
+[iOS] Fix the issue about sign-in page crash under InPrivate mode when launching
+[Android] Fix managed bookmark does not show issue in first launch
+
+### New enhancements
+
+[iOS] Improve the user experience of single device mode
+[iOS] Improve the user experience about InPrivate mode
 
 ## Version 134.0.3124.22 (Android and iOS): February 21, 2025
 
@@ -65,12 +90,12 @@ Fixed various bugs and performance issues.
 ### Bug fixes
 
 - [iOS] Fix the issue about App Proxy does not take effect after signing out and then signing back in without exiting the app
-- [iOS] Fix the issue about canceling in Guided Switch does not return to the homepage when URL Block is active
+- [iOS] Fix the issue about canceling in Guided Switch doesn't return to the homepage when URL Block is active
  
 
 ### New enhancements
 
-- [iOS] Improve IdleTimeoutActions policy and support signout action
+- [iOS] Improve IdleTimeoutActions policy and support sign out action
 - [iOS] Improve the feature experience for DisableFeature policy about settings and feedback
 - [iOS] Improve the user experience about InPrivate mode on iPad
 - [iOS & Android] Add manage account entry in account settings page
