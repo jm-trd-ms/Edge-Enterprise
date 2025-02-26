@@ -39,19 +39,19 @@ Fixed various bugs and performance issues.
 
 ### New Policies
 
-[Android] Support manages web sub resource blocking policy
+- [Android] Support manages web sub resource blocking policy
 By default, AllowListURLs and BlockListURLs apply only at the navigation level. When you embed blocked URLs (either URLs configured in BlockListURLs or URLs not configured in AllowListURLs) as subresources within a web page, those subresource URLs aren't blocked. To further restrict these subresources, you can configure the new policy to block them. For example, if you set `com.microsoft.intune.mam.managedbrowser.ManageRestrictedSubresourceEnabled=true`, subresource URLs are blocked if they're listed as blocked.
 
 ### Bug fixes
 
-[iOS] Fix the issue about APP Proxy fails to function properly due to CA Remediation Cache
-[iOS] Fix the issue about sign-in page crash under InPrivate mode when launching
-[Android] Fix managed bookmark does not show issue in first launch
+- [iOS] Fix the issue about APP Proxy fails to function properly due to CA Remediation Cache
+- [iOS] Fix the issue about sign-in page crash under InPrivate mode when launching
+- Android] Fix managed bookmark does not show issue in first launch
 
 ### New enhancements
 
-[iOS] Improve the user experience of single device mode
-[iOS] Improve the user experience about InPrivate mode
+- [iOS] Improve the user experience of single device mode
+- [iOS] Improve the user experience about InPrivate mode
 
 ## Version 134.0.3124.22 (Android and iOS): February 21, 2025
 
