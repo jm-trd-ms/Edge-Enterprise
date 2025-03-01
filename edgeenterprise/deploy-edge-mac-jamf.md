@@ -5,7 +5,7 @@ author: dan-wesley
 manager: laurawi
 ms.date: 07/18/2024
 audience: ITPro
-ms.topic: conceptual
+ms.topic: install-set-up-deploy
 ms.service: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
