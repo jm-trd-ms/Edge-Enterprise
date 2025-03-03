@@ -77,7 +77,7 @@ You can use the [EdgeSidebarCustomizeEnabled](/deployedge/microsoft-edge-policie
 Use the following steps as a guide to configuring this policy.
 
 1. Open the group policy editor and go to **Administrative Templates** > **Microsoft Edge** and then select **Enable sidebar customize**.
-2. This policy is disabled by default. Select **Enabled** to let users customize the sidebar. The new setting will take affect after you restart the browser.
+2. This policy is **Enabled** by default. To allow users to customize the sidebar, no additional action is required. Any changes will take effect after restarting the browser.
 <!--- group policy screenshot  ---->
 ![Use policy editor to manage access to sidebar customize.](media/microsoft-edge-sidebar/gpo-customize-sidebar.png)
 
