@@ -30,9 +30,13 @@ These release notes provide information about new features and nonsecurity updat
 
 Fixed various bugs and performance issues for Extended Stable Channel.
 
+Stable channel security updates are listed [here](/deployedge/microsoft-edge-relnotes-security#february-27-2025).
+
 ## Version 133.0.3065.92: February 27, 2025
 
 Fixed various bugs and performance issues for Stable Channel.
+
+Stable channel security updates are listed [here](/deployedge/microsoft-edge-relnotes-security#february-27-2025).
 
 ## Version 133.0.3065.82: February 21, 2025
 
